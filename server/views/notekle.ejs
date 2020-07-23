@@ -1,0 +1,33 @@
+
+  <div class="container">
+  <h1 class="ortala">Hoş Geldin <%=session%></h1>
+  
+
+
+  <form action="/login/notekle" method="POST" >
+    <div class="form-group">
+      
+     
+      
+      <input id="kullaniciAdi" type="hidden"  name="kullaniciAdi" value="<%=session %>"/> <br>
+      <div class="ortala">
+         <textarea id = "günlükNot " type="text" name="günlükNot" style="width:100%; height:30%;" placeholder="Bugün ne yaptın">  
+         
+                     </textarea>
+       <div>              
+            
+             <br><input id="tarih" type="date" name="tarih" style="width:12%; height:7%"value:""/> <br><br>
+             <!-- <input id="tarih-submit" type="submit"/>-->
+              <input type="submit"/><br><br><br>
+    </div>
+  </form>
+<div class="ortala">
+              <form action="/login/note" method="POST" >
+    <div class="form-group">
+      
+         
+              <input type= "submit" class="btn btn-primary" value="Notları Gör">
+    </div>
+  </form>
+  </div>
+</div>

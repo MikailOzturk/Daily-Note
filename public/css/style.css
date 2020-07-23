@@ -1,0 +1,31 @@
+.DenemeBuyuk{
+    font-size: xx-small;
+    background-color:seagreen;
+    margin: 1px;
+}
+
+.yeniStyle{
+    border: 1px;
+    background-color: chartreuse;
+    background-color: cyan;
+}
+
+.loginPanel{
+    width: 300px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ortala{
+    text-align: center;
+}
+.date{
+    font-size: 15px;
+    color: dimgray;
+    text-align: center;
+    float: right;
+    margin-left:auto;
+      margin-right:auto;
+      position: absolute;
+    
+}

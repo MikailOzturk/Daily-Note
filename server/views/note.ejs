@@ -1,0 +1,87 @@
+<div class="container">
+ <div clas="row">
+   <h2 class="ortala">Günlük Notlar</h2>
+
+
+  
+  <div class="panel-group" id="accordion">
+
+   
+       <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse">
+          
+                 <div class="media-body">
+                    <h4 class="media-heading">Yeni Not Eklemek İster misin? <i> <small>  <span id="time2"></span>
+                            <script>
+                              document.getElementById("time2").innerHTML = Date();
+                            </script>
+                        </small></i></h4>
+                  <p></p>
+                </div>
+              
+          </a>
+        </h4>
+      </div>
+      <div id="collapse" class="panel-collapse collapse">
+        <div class="panel-body"><p>Yeni Not Ekle</p>
+
+          <form action="/login/notekle" method="POST">  
+                       <input id="kullaniciAdi" type="hidden"  name="kullaniciAdi" value="<%=session %>"/> <br>
+   
+                   
+                    
+                     <input type="submit"/>
+          </form>
+        </div>
+      </div>
+    </div>
+   <br>
+   <br>
+  <%for(var i=1; i<=gunluk.length; i++){%>
+   <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>">
+              
+                <div class="media-body">
+                  
+                    <h4 class="media-heading"><%=gunluk[i-1].kullaniciAdi%> <small><i>Posted on <%=gunluk[i-1].tarih%></i></small></h4>
+                  <p></p>
+                  
+                </div>
+              
+          </a>
+        </h4>
+      </div>
+      <div id="collapse<%=i%>" class="panel-collapse collapse">
+        <div class="panel-body"><p><%=gunluk[i-1].günlükNot%></p>
+
+        
+                        <form action="/login/note" method="POST">  
+                        
+                       <input id="kullaniciAdi" type="hidden"  name="kullaniciAdi" value="<%=session %>"/> <br>
+                         
+                    <textarea  id = "günlükNot" type="hidden" name="günlükNot" style="width:100%;">
+                     </textarea> <br>
+                   <br><input id="tarih" type="hidden" name="tarih" style="width:12%; height:7%"value="<%=gunluk[i-1].tarih%>"/>
+                     <input id = "günlükNot1" type="hidden" name="günlükNot1" value="<%=gunluk[i-1].günlükNot%>" />
+                     <input id = "gunluk_id" type="hidden" name="gunluk_id" value="<%=gunluk[i-1].gunluk_id%>" />
+                     <input type="submit"/>
+          </form>
+             
+  
+        
+        </div>
+      </div>
+    </div>
+
+     <% } %>
+
+   
+   
+  </div> 
+  </div>
+</div>
+    
