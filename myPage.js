@@ -24,7 +24,7 @@ app.set('views',path.join(__dirname, '/server/views'));
 
 app.get("/logout", function(req,res){
     
-      delete req.session.kullaniciAdi;
+      delete req.session.userName;
       res.redirect("/");
 });
 
@@ -42,7 +42,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 require('./server/routes/routeManager')(app);
 
 
-var Kullanici = require('./server/models/kullanici');
+var User = require('./server/models/user');
 
 
 
